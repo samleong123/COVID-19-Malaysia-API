@@ -11,3 +11,13 @@ Build with pure PHP script
 
 ## Instructions 
 Please read [https://covid-19.samsam123.name.my/api.html](https://covid-19.samsam123.name.my/api.html) for more information.
+
+## Local usage 
+Requirement :
+1. PHP 7.0 and above , 7.4 is recommended
+2. Connected with Internet
+3. Able to access Github 
+
+Steps : 
+1. Copy the 3 of the PHP file to ur webroot directory with PHP enabled.
+2. Start using it now by reading the instructions [here](https://covid-19.samsam123.name.my/api.html).
