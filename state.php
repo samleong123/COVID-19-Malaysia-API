@@ -1,6 +1,5 @@
 <?php
 
-
 $date_request = $_GET["date"];
 if ($date_request == ""){
        $json = array("Status"=>"Fail","Message"=>"Did not provide query string - date. Please refer to https://covid-19.samsam123.name.my/api.html for more information.");
@@ -176,17 +175,17 @@ if ($output_date_data !== $date_request){
      
 } else {
     $state_request = $_GET["state"];
-if (empty($state_request)) {
-    echo (json_encode($latest_date_data)); header('Content-type: application/json');  header('Access-Control-Allow-Origin: *');
+if (empty($state_request)) {header('Content-type: application/json');  header('Access-Control-Allow-Origin: *');
+    echo (json_encode($latest_date_data)); 
 } else {
     $array_number = array_search($state_request, array_column($latest_date_data, "state"));
     if ($array_number == "") {
       $json = array("Status"=>"Fail","Message"=>"Could not find state provided! Please try again!");
        header('Content-type: application/json');  header('Access-Control-Allow-Origin: *');
    echo (json_encode($json));
-} else {
+} else {  header('Content-type: application/json');  header('Access-Control-Allow-Origin: *');
     echo json_encode($latest_date_data[$array_number]);
-    header('Content-type: application/json');  header('Access-Control-Allow-Origin: *');
+  
 }
 }
 }
