@@ -2,8 +2,8 @@
 An API to convert CSV data from Ministry Of Health - Malaysia data into JSON file 
 
 ## Available Data 
-1. Cases (with state level)
-2. Deaths
+1. Cases  (with state level)
+2. Deaths (with state level)
 3. Vaccination
 4. Clusters
 
