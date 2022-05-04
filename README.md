@@ -126,7 +126,6 @@ The rate limit code is same as the rate limit section on [API section](https://c
 Any IP Address that exceed 30 requests in 30 seconds will receive a ``` 429 Too Many Requests ``` and a JSON string contains ```IP Address``` and ```Total Call Requests in 30 seconds```.  </br>
 The rate limit will be auto reset each 30 seconds.
 
-
 ## Project with this API
 Make a PR if you want to add your project that utilize this API above.
 1. [At A Glance - COVID-19 Daily Situation in Malaysia](https://covid-19.samsam123.name.my/) - me
