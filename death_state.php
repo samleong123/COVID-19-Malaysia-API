@@ -101,17 +101,22 @@ if (empty($state_request)) {
    
 } else {
     $array_number = array_search($state_request, array_column($latest_date, "state"));
-    if ($array_number == "") {
-      $json = array("Status"=>"Fail","Message"=>"Could not find state provided! Please try again!");
+    $json_encode_date = json_encode($latest_date[$array_number]);
+    $json_decode_date = json_decode($json_encode_date,true);
+if ($json_decode_date["state"] !== $state_request) {
+    
+    
+       $json = array("Status"=>"Fail","Message"=>"Could not find state provided! Please try again!");
        header('Content-type: application/json');  header('Access-Control-Allow-Origin: *');
    echo (json_encode($json));
-} else {   header('Content-type: application/json');  header('Access-Control-Allow-Origin: *');
+} else {
+ header('Content-type: application/json');  header('Access-Control-Allow-Origin: *');
     echo json_encode($latest_date[$array_number]);
- 
-    
-    
-    
 }
+    
+    
+    
+
 }
 
 
