@@ -174,19 +174,22 @@ if ($output_date_data !== $date_request){
      echo (json_encode($json));
      
 } else {
-    $state_request = $_GET["state"];
+   $state_request = $_GET["state"];
 if (empty($state_request)) {header('Content-type: application/json');  header('Access-Control-Allow-Origin: *');
     echo (json_encode($latest_date_data)); 
 } else {
     $array_number = array_search($state_request, array_column($latest_date_data, "state"));
-    if ($array_number == "") {
-      $json = array("Status"=>"Fail","Message"=>"Could not find state provided! Please try again!");
-       header('Content-type: application/json');  header('Access-Control-Allow-Origin: *');
-   echo (json_encode($json));
-} else {  header('Content-type: application/json');  header('Access-Control-Allow-Origin: *');
-    echo json_encode($latest_date_data[$array_number]);
-  
+   header('Content-type: application/json');  header('Access-Control-Allow-Origin: *');
+    $final_results_state = json_encode($latest_date_data[$array_number]);
+    $final_results_state_json = json_decode($final_results_state,true);
+    if ($final_results_state_json["state"] !== $state_request)   {$json = array("Status"=>"Fail","Message"=>"Could not find state provided! Please try again!");
+    header('Content-type: application/json');  header('Access-Control-Allow-Origin: *');
+echo (json_encode($json));} else {  header('Content-type: application/json');  header('Access-Control-Allow-Origin: *');
+  echo json_encode($latest_date_data[$array_number]);
+
 }
+  
+
 }
 }
 }
