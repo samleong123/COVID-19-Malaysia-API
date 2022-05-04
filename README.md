@@ -20,7 +20,7 @@ Requirement :
 3. Able to access Github 
 
 Steps : 
-1. Copy the 5 of the PHP file to ur webroot directory with PHP enabled.
+1. Copy the 6 of the PHP file to ur webroot directory with PHP enabled.
 2. Start using it now by reading the instructions [here](https://covid-19.samsam123.name.my/api.html).
 
 Credit :
